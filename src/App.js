@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import Navbar from "./Navbar";
+import Header from "./Header";
+import MainContent from "./MainContent";
+import Footer from "./Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+    const [theme, setTheme] = useState("default");
+    const themeSource = document.getElementById("style-theme");
+
+    if (theme === "default") {
+        themeSource.setAttribute("href", "./css/index.css");
+    }
+
+    if (theme === "dark") {
+        themeSource.setAttribute("href", "./css/theme-dark.css");
+    }
+    if (theme === "light") {
+        themeSource.setAttribute("href", "./css/theme-light.css");
+    }
+
+    return <div className="app">
+        <Navbar theme={theme} setTheme={setTheme} />
+        <Header/>
+        <MainContent/>
+        <Footer/>
+    </div>;
 }
-
-export default App;

@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: gray;
+}
+.navbar-wide {
+    background-color: aquamarine;
+}
+
+.navbar-brand {
+    margin-right: 2rem;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0rem 5rem;
+}
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-menu-btn {
+    padding: 1rem;
+}
